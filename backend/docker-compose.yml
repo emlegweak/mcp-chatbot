@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  mcp-chatbot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mcp-chatbot
+    env_file:
+      - .env
+    volumes:
+      - ./servers_config.json:/app/servers_config.json
+      - /var/run/docker.sock:/var/run/docker.sock
+    stdin_open: true
+    tty: true
+    ports:
+      - "8000:8000"

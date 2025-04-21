@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "nationalparks": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-server-nationalparks"
+      ],
+      "env": {
+        "NPS_API_KEY": "${NPS_API_KEY}"
+      }
+    },
+    "chess": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "pab1it0/chess-mcp"
+      ]
+    }
+  }
+}
